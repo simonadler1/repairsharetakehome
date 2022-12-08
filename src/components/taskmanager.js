@@ -69,7 +69,7 @@ const TaskManager = () => {
     return phase.tasks.every((task) => task.isCompleted);
   };
 
-  const markTaskAsCompleted = (phaseIndex, taskIndex) => {
+  const toggleTaskAsComplete = (phaseIndex, taskIndex) => {
     const newPhases = [...phases];
     const previousPhasesCompleted = newPhases
       .slice(0, phaseIndex)
@@ -149,7 +149,7 @@ const TaskManager = () => {
                 <input
                   type="checkbox"
                   checked={task.isCompleted}
-                  onChange={() => markTaskAsCompleted(phaseIndex, taskIndex)}
+                  onChange={() => toggleTaskAsComplete(phaseIndex, taskIndex)}
                 />
                 <label>{task.name}</label>
               </div>
